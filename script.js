@@ -80,14 +80,20 @@ function enviarMensagem(){
     chat.appendChild(msgBot);
 
     // botão WhatsApp
-    chat.scrollTop = chat.scrollHeight;
+    const link = document.createElement("a");
+    link.href = "https://wa.we/5561999999999?text=" + encodeURIComponent(mensagem);
+    link.target = "_blank";
+    link.innerText = "falar no WhatsApp";
+    link.style.display = "block";
+    link.style.marginTop = "5px";
+    link.style.color = "green";
 
-setTimeout(()=>respostaBot(mensagem),1000);
+    chat.appendChild(link);
+
+    input.value = "";
+    chat.scroll = chat.scrollHeight;
 
 }
-
-}
-
 
 // =============================
 // IA DE RESPOSTA
