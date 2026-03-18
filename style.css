@@ -1,342 +1,151 @@
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
+*{margin:0;padding:0;box-sizing:border-box;}
 
 body{
-font-family:Arial, Helvetica, sans-serif;
+font-family:Arial;
 background:#0f172a;
 color:white;
+padding-top:80px;
 }
-
 
 /* MENU */
-
 .menu{
-position: fixed;
+position:fixed;
 top:0;
-width: 0;
-display: flex;
+width:100%;
+display:flex;
 justify-content:space-between;
-align-items:center;
-padding:20px 60px;
+padding:20px;
 background:transparent;
-transition: 0.3s;
-z-index: 1000;
-}
-.menu.rolar{
-background: #020617;
-box-shadow: 0 5px 15px rgba(0,0,0,0.4);
-}
-
-.menu a{
-display:flex;
-align-items: center;
-gap: 8px;
-}
-
-.menu h2{
-color:#22c55e;
-}
-
-.menu ul{
-display:flex;
-gap:25px;
-list-style:none;
-}
-
-.menu a{
-text-decoration:none;
-color:white;
 transition:0.3s;
 }
 
-.menu a:hover{
-color:#22c55e;
-}
+.menu.rolar{background:#020617;}
 
-body{
-padding-top: 80px;
-}
+.menu ul{display:flex;gap:20px;list-style:none;}
+.menu a{color:white;text-decoration:none;}
 
 /* HERO */
-
 .hero{
 height:60vh;
-background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
-url('img/gettyimages.jpg');
-background-size:cover;
-background-position:center;
-text-align: center;
-padding:120px 20px;
-}
-
-.hero h1{
-font-size:48px;
-margin-bottom:20px;
-}
-
-.hero p{
-font-size:18px;
-opacity:0.8;
-}
-
-/* BOTÃO */
-
-.botao{
-display:inline-block;
-margin-top:25px;
-padding:14px 35px;
-background:#22c55e;
-color:white;
-text-decoration:none;
-border-radius:30px;
-transition:0.3s;
-}
-
-.botao:hover{
-background:#16a34a;
-transform:scale(1.05);
-}
-
-/* SEÇÕES */
-
-section{
-padding:80px 20px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
 text-align:center;
 }
 
-/* SERVIÇOS */
-
-.servicos h2{
-margin-bottom:40px;
-font-size:32px;
+/* BOTÃO */
+.botao{
+margin-top:20px;
+padding:10px 30px;
+background:#22c55e;
+border-radius:20px;
+color:white;
+text-decoration:none;
 }
 
+/* CARDS */
 .cards{
 display:flex;
-justify-content:center;
-gap:30px;
+gap:20px;
 flex-wrap:wrap;
+justify-content:center;
 }
 
 .card{
-opacity: 0;
-transform: translateY(40px);
-transition:all 0.6s ease;
+background:#1e293b;
+padding:20px;
+border-radius:10px;
+opacity:0;
+transform:translateY(40px);
+transition:0.5s;
 }
 
 .card.mostrar{
 opacity:1;
-transform: translateY(0);
-}
-.card{
-background:#1e293b;
-padding:25px;
-border-radius:12px;
-width:250px;
-transition:0.3s;
+transform:translateY(0);
 }
 
-.card:hover{
-transform:translateY(-10px);
-box-shadow:0 10px 25px rgba(0,0,0,0.5);
-}
+/* CONTADOR */
+.contador{font-size:40px;color:#22c55e;}
 
-.card .icone{
-    font-size:50px;
-    color: #22c55e;
-    margin-bottom: 20px;
-    transition:0.3s;
-}
-
-.card:hover .icone{
-    transform:scale(1.5);
-}
-
-/* SOBRE */
-
-.sobre{
-background:#020617;
-}
-
-/* CONTATO */
-
-.contato{
-background:#0f172a;
-}
-
-/* FOOTER */
-
-footer{
-text-align:center;
-padding:20px;
-background:#020617;
-opacity:0.8;
-}
-.numeros{
-padding:80px;
-text-align:center;
-background:#020617;
-}
-
-.contador-container{
-display:flex;
-justify-content:center;
-gap:50px;
-flex-wrap:wrap;
-margin-top:40px;
-}
-
-.contador-box{
-font-size:30px;
-}
-
-.contador{
-font-size:50px;
-color:#22c55e;
-}
-
+/* WHATSAPP */
 .whatsapp-float{
 position:fixed;
+bottom:20px;
+right:20px;
+background:#25d366;
 width:60px;
 height:60px;
-bottom:25px;
-right:25px;
-background:#25d366;
-color:white;
 border-radius:50%;
 display:flex;
-justify-content:center;
 align-items:center;
-font-size:30px;
-box-shadow:0 5px 15px rgba(0,0,0,0.3);
-z-index:1000;
-transition:0.3s;
+justify-content:center;
+font-size:28px;
+animation:pulse 2s infinite;
 }
-
-.whatsapp-float:hover{
-transform:scale(1.1);
-transition: 0.3s;
-background:#20b954;
-}
-
-/* animação */
 
 @keyframes pulse{
-
-0%{
-box-shadow:0 0 0 0 rgba(37,211,102,0.7);
+0%{box-shadow:0 0 0 0 rgba(37,211,102,0.7);}
+70%{box-shadow:0 0 0 20px rgba(37,211,102,0);}
+100%{box-shadow:0 0 0 0 rgba(37,211,102,0);}
 }
 
-70%{
-box-shadow:0 0 0 20px rgba(37,211,102,0);
-}
-
-100%{
-box-shadow:0 0 0 0 rgba(37,211,102,0);
-}
-
-}
-
-/* hover */
-
-.whatsapp-float:hover{
-transform:scale(1.1);
-}
-
-/* texto lateral */
-
-.tooltip{
-position:absolute;
-right:80px;
-background:#020617;
-padding:8px 12px;
-border-radius:6px;
-font-size:14px;
-opacity:0;
-transition:0.3s;
-white-space:nowrap;
-}
-
-.whatsapp-float:hover .tooltip{
-opacity:1;
-}
 /* CHAT */
-
-.chat-container{
-position:fixed;
-bottom:25px;
-right:25px;
-z-index:1000;
-}
-
 .chat-botao{
-    position:fixed;
-    bottom:100px;
-    width:60px;
-    height:60px;
-    background:#22c55e;
-    color:white;
-    border-radius:50%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:26px;
-    cursor:pointer;
-    z-index:1000;
-    box-shadow:0 5px 15px rgba(0,0,0,0.4);
+position:fixed;
+bottom:100px;
+right:20px;
+background:#22c55e;
+width:60px;
+height:60px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+cursor:pointer;
 }
 
 .chat-box{
-    position:fixed;
-    bottom:170px;
-    width:300px;
-    height:25px;
-    background:#020617;
-    border-radius:12px;
-    display:none;
-    flex-direction:column;
-    overflow:hidden;
-    box-shadow:0 10px 25px rgba(0,0,0,0.6);
-    z-index:1000;
-    margin-bottom:10px;
+position:fixed;
+bottom:170px;
+right:20px;
+width:300px;
+background:#020617;
+border-radius:10px;
+display:none;
+flex-direction:column;
 }
 
 .chat-header{
-    background:#22c55e;
-    padding:10px;
-    font-weight:bold;
-    display:flex;
-    justify-content:space-between;
+background:#22c55e;
+padding:10px;
+display:flex;
+justify-content:space-between;
 }
 
 .chat-mensagens{
-    height:250px;
-    padding:10px;
-    overflow-y:auto;
-    font-size:14px;
+height:200px;
+overflow:auto;
+padding:10px;
 }
 
-.msg{
-    margin-bottom:10px;
-    padding: 8px;
-    border-radius: 8px;
+.msg{margin:5px;padding:8px;border-radius:8px;}
+.bot{background:#1e293b;}
+.user{background:#22c55e;text-align:right;}
+
+.chat-input{
+display:flex;
 }
 
-.msg.bot{
-background:#1e293b;
+.chat-input input{
+flex:1;
+padding:10px;
+border:none;
 }
 
-.msg.user{
+.chat-input button{
 background:#22c55e;
-text-align:right;
-}
-
-#chatInput{
 border:none;
 padding:10px;
-outline:none;
 }
