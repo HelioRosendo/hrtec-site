@@ -219,6 +219,7 @@ transition:0.3s;
 
 .whatsapp-float:hover{
 transform:scale(1.1);
+transition: 0.3s;
 background:#20b954;
 }
 
