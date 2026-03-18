@@ -1,66 +1,91 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HRTEC - Suporte Técnico</title>
+
+<title>HRTEC - Suporte Técnico em TI</title>
 
 <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
 
-<header>
-    <div class="logo">HRTEC</div>
+<!-- MENU -->
+<header class="menu">
+    <h2>HRTEC</h2>
     <nav>
-        <a href="#">Início</a>
-        <a href="#">Serviços</a>
-        <a href="#">Sobre</a>
-        <a href="#">Contato</a>
+        <a href="#inicio">Início</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#contato">Contato</a>
     </nav>
 </header>
 
-<section class="hero">
-    <h1>Suporte Técnico em Informática em Brasília</h1>
-    <p>Atendimento rápido • Redes • Servidores • Manutenção</p>
+<!-- HERO -->
+<section class="hero" id="inicio">
+    <h1>Suporte Técnico em Informática</h1>
+    <p>Redes • Servidores • Firewall • Manutenção</p>
 
-    <div class="botoes">
-        <a href="#" class="btn">Solicitar Orçamento</a>
-        <a href="https://wa.me/5561999999999" class="btn whatsapp">WhatsApp</a>
-    </div>
+    <a href="https://wa.me/5561999999999" class="botao">
+        Falar no WhatsApp
+    </a>
 </section>
 
-<section class="servicos">
+<!-- SERVIÇOS -->
+<section class="servicos" id="servicos">
     <h2>Nossos Serviços</h2>
 
     <div class="cards">
-        <div class="card">Manutenção de Computadores</div>
-        <div class="card">Configuração de Redes</div>
-        <div class="card">Servidores e Backup</div>
+        <div class="card">💻 Suporte Técnico</div>
+        <div class="card">🌐 Redes</div>
+        <div class="card">🔐 Segurança</div>
+        <div class="card">🖥 Servidores</div>
     </div>
 </section>
 
-<section class="sobre">
+<!-- SOBRE -->
+<section class="sobre" id="sobre">
     <h2>Sobre a HRTEC</h2>
     <p>
-        Somos especialistas em suporte técnico, redes e infraestrutura de TI.
-        Atuamos com foco em agilidade, segurança e eficiência para empresas e residências.
+        Especialistas em tecnologia da informação, oferecendo soluções completas
+        para empresas e residências.
     </p>
 </section>
 
-<footer>
-    <p>© 2026 HRTEC - Todos os direitos reservados</p>
-</footer>
+<!-- CONTATO -->
+<section class="contato" id="contato">
+    <h2>Contato</h2>
+    <p>Entre em contato conosco agora mesmo.</p>
 
-<!-- WhatsApp Flutuante -->
+    <a href="https://wa.me/5561999999999" class="botao">
+        WhatsApp
+    </a>
+</section>
+
+<!-- WHATSAPP FLOAT -->
 <a href="https://wa.me/5561999999999" class="whatsapp-float">💬</a>
 
-<!-- Chat -->
-<div class="chat-box" id="chat">
-    <p>Olá! Como podemos ajudar?</p>
-</div>
+<!-- CHAT -->
+<div class="chat-container">
 
 <button class="chat-btn" onclick="toggleChat()">💬</button>
+
+<div class="chat-box" id="chat">
+
+<div class="chat-header">
+Suporte HRTEC
+<span onclick="toggleChat()">✖</span>
+</div>
+
+<div class="chat-messages" id="chatMessages"></div>
+
+<div class="chat-options" id="chatOptions"></div>
+
+</div>
+</div>
 
 <script src="script.js"></script>
 

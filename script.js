@@ -1,60 +1,94 @@
-// Abrir / fechar chat
-function toggleChat() {
+function toggleChat(){
     const chat = document.getElementById("chat");
 
-    if (chat.style.display === "block") {
+    if(chat.style.display === "flex"){
         chat.style.display = "none";
     } else {
-        chat.style.display = "block";
+        chat.style.display = "flex";
 
-        // Só envia mensagem automática uma vez
-        if (!chat.dataset.loaded) {
+        if(!chat.dataset.loaded){
             iniciarChat();
             chat.dataset.loaded = true;
         }
     }
 }
 
-// Simulação de atendimento automático
-function iniciarChat() {
-    const chat = document.getElementById("chat");
+function digitarMensagem(texto){
+    const mensagens = document.getElementById("chatMessages");
 
-    // Limpa conteúdo inicial
-    chat.innerHTML = "";
+    const msg = document.createElement("div");
+    msg.className = "bot";
+    msg.innerText = "Digitando...";
+    mensagens.appendChild(msg);
 
-    // Mensagem 1
     setTimeout(() => {
-        adicionarMensagem("👋 Olá! Seja bem-vindo à HRTEC.");
+        msg.innerText = texto;
+    }, 1000);
+}
+
+function iniciarChat(){
+    setTimeout(() => {
+        digitarMensagem("Olá! Bem-vindo à HRTEC 👋");
     }, 500);
 
-    // Mensagem 2
     setTimeout(() => {
-        adicionarMensagem("💻 Trabalhamos com suporte técnico, redes e servidores.");
+        digitarMensagem("Como podemos te ajudar?");
     }, 2000);
 
-    // Mensagem 3
     setTimeout(() => {
-        adicionarMensagem("📲 Clique no botão do WhatsApp para falar conosco agora!");
-    }, 4000);
+        mostrarOpcoes([
+            "Suporte Técnico",
+            "Redes",
+            "Segurança",
+            "WhatsApp"
+        ]);
+    }, 3000);
 }
 
-// Adiciona mensagem no chat
-function adicionarMensagem(texto) {
-    const chat = document.getElementById("chat");
+function mostrarOpcoes(opcoes){
+    const container = document.getElementById("chatOptions");
+    container.innerHTML = "";
 
-    const msg = document.createElement("p");
-    msg.style.margin = "5px 0";
-    msg.innerText = texto;
-
-    chat.appendChild(msg);
+    opcoes.forEach(op => {
+        const btn = document.createElement("button");
+        btn.innerText = op;
+        btn.onclick = () => responder(op);
+        container.appendChild(btn);
+    });
 }
 
-// Fechar chat clicando fora
-document.addEventListener("click", function (event) {
-    const chat = document.getElementById("chat");
-    const botao = document.querySelector(".chat-btn");
+function responder(opcao){
 
-    if (!chat.contains(event.target) && !botao.contains(event.target)) {
-        chat.style.display = "none";
-    }
-});
+    const mensagens = document.getElementById("chatMessages");
+
+    const user = document.createElement("div");
+    user.className = "bot";
+    user.style.background = "#22c55e";
+    user.innerText = opcao;
+
+    mensagens.appendChild(user);
+
+    document.getElementById("chatOptions").innerHTML = "";
+
+    setTimeout(() => {
+
+        if(opcao === "Suporte Técnico"){
+            digitarMensagem("Fazemos manutenção e suporte completo.");
+        }
+        else if(opcao === "Redes"){
+            digitarMensagem("Configuramos redes e Wi-Fi.");
+        }
+        else if(opcao === "Segurança"){
+            digitarMensagem("Protegemos sua empresa com firewall.");
+        }
+        else if(opcao === "WhatsApp"){
+            window.open("https://wa.me/5561999999999", "_blank");
+            return;
+        }
+
+        setTimeout(() => {
+            mostrarOpcoes(["Ir para WhatsApp"]);
+        }, 1500);
+
+    }, 1000);
+}

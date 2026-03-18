@@ -1,126 +1,154 @@
 body{
 margin:0;
-font-family:Arial, sans-serif;
-background:#0b1a2f;
-color:#fff;
+font-family:Arial;
+background:#0f172a;
+color:white;
 }
 
-/* HEADER */
-header{
+/* MENU */
+.menu{
+position:fixed;
+top:0;
+width:100%;
 display:flex;
 justify-content:space-between;
-padding:15px 20px;
-background:#081423;
+padding:15px 30px;
+background:#020617;
+z-index:1000;
 }
 
-nav a{
-color:#fff;
+.menu a{
+color:white;
 margin:0 10px;
 text-decoration:none;
 }
 
 /* HERO */
 .hero{
-min-height:80vh;
+height:80vh;
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
-padding:20px;
+padding-top:60px;
 }
 
-.hero h1{
-font-size:32px;
-}
-
-.botoes{
+.botao{
 margin-top:20px;
-display:flex;
-gap:10px;
-flex-wrap:wrap;
-}
-
-.btn{
-padding:12px 20px;
-background:#1db954;
-color:#fff;
-border-radius:25px;
+padding:12px 30px;
+background:#22c55e;
+border-radius:30px;
+color:white;
 text-decoration:none;
-}
-
-.whatsapp{
-background:#25d366;
 }
 
 /* SERVIÇOS */
 .servicos{
-padding:40px 20px;
+padding:60px 20px;
 text-align:center;
 }
 
 .cards{
 display:flex;
-flex-wrap:wrap;
-gap:15px;
+gap:20px;
 justify-content:center;
+flex-wrap:wrap;
 }
 
 .card{
-background:#112240;
+background:#1e293b;
 padding:20px;
 border-radius:10px;
-width:250px;
+width:200px;
 }
 
 /* SOBRE */
 .sobre{
-padding:40px 20px;
+padding:60px 20px;
+text-align:center;
+background:#020617;
+}
+
+/* CONTATO */
+.contato{
+padding:60px 20px;
 text-align:center;
 }
 
-/* FOOTER */
-footer{
-text-align:center;
-padding:20px;
-background:#081423;
-}
-
-/* WHATSAPP FLOAT */
+/* WHATSAPP */
 .whatsapp-float{
 position:fixed;
 bottom:20px;
 right:20px;
 background:#25d366;
-color:#fff;
 padding:15px;
 border-radius:50%;
-font-size:20px;
+color:white;
 text-decoration:none;
 }
 
 /* CHAT */
-.chat-btn{
+.chat-container{
 position:fixed;
-bottom:90px;
-right:20px;
-background:#1db954;
+bottom:20px;
+right:90px;
+}
+
+.chat-btn{
+width:60px;
+height:60px;
+background:#22c55e;
 border:none;
-padding:15px;
 border-radius:50%;
-color:#fff;
-font-size:18px;
+color:white;
+font-size:24px;
+cursor:pointer;
 }
 
 .chat-box{
 display:none;
-position:fixed;
-bottom:160px;
-right:20px;
-background:#fff;
-color:#000;
-padding:15px;
+width:300px;
+height:400px;
+background:#020617;
 border-radius:10px;
-width:200px;
+flex-direction:column;
+overflow:hidden;
+margin-bottom:10px;
+}
 
+.chat-header{
+background:#22c55e;
+padding:10px;
+display:flex;
+justify-content:space-between;
+}
+
+.chat-messages{
+flex:1;
+padding:10px;
+overflow-y:auto;
+}
+
+.bot{
+background:#1e293b;
+padding:8px;
+margin-bottom:5px;
+border-radius:8px;
+}
+
+.chat-options{
+padding:10px;
+display:flex;
+flex-direction:column;
+gap:5px;
+}
+
+.chat-options button{
+background:#22c55e;
+border:none;
+padding:10px;
+border-radius:5px;
+color:white;
+cursor:pointer;
 }
