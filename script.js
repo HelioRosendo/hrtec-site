@@ -1,81 +1,125 @@
-// MENU SCROLL
-window.addEventListener("scroll", () => {
-document.querySelector(".menu").classList.toggle("rolar", window.scrollY > 50);
-});
-
-// ANIMAÇÃO CARDS
-const cards = document.querySelectorAll(".card");
-
-function mostrarCards(){
-const trigger = window.innerHeight * 0.85;
-
-cards.forEach(card => {
-const top = card.getBoundingClientRect().top;
-if(top < trigger){
-card.classList.add("mostrar");
-}
-});
+body{
+margin:0;
+font-family:Arial, sans-serif;
+background:#0b1a2f;
+color:#fff;
 }
 
-window.addEventListener("scroll", mostrarCards);
-mostrarCards();
-
-// CONTADOR
-const contadores = document.querySelectorAll(".contador");
-
-contadores.forEach(contador => {
-const update = () => {
-const target = +contador.getAttribute("data-target");
-const count = +contador.innerText;
-
-const increment = target / 100;
-
-if(count < target){
-contador.innerText = Math.ceil(count + increment);
-setTimeout(update, 20);
-}else{
-contador.innerText = target;
-}
-};
-
-update();
-});
-
-// CHAT
-function abrirChat(){
-document.getElementById("chatBox").style.display = "flex";
+/* HEADER */
+header{
+display:flex;
+justify-content:space-between;
+padding:15px 20px;
+background:#081423;
 }
 
-function fecharChat(){
-document.getElementById("chatBox").style.display = "none";
+nav a{
+color:#fff;
+margin:0 10px;
+text-decoration:none;
 }
 
-function enviarMensagem(){
-const input = document.getElementById("chatInput");
-const mensagem = input.value;
+/* HERO */
+.hero{
+min-height:80vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+}
 
-if(mensagem === "") return;
+.hero h1{
+font-size:32px;
+}
 
-const chat = document.getElementById("chatMensagens");
+.botoes{
+margin-top:20px;
+display:flex;
+gap:10px;
+flex-wrap:wrap;
+}
 
-const user = document.createElement("div");
-user.classList.add("msg","user");
-user.innerText = mensagem;
-chat.appendChild(user);
+.btn{
+padding:12px 20px;
+background:#1db954;
+color:#fff;
+border-radius:25px;
+text-decoration:none;
+}
 
-const bot = document.createElement("div");
-bot.classList.add("msg","bot");
-bot.innerText = "bot.innerText = "Olá! 👋\n\nSomos da HRTEC.\n\nInforme seu problema que vamos te ajudar rapidamente.";
-chat.appendChild(bot);
+.whatsapp{
+background:#25d366;
+}
 
-const link = document.createElement("a");
-link.href = "https://wa.me/5561999999999?text=" + encodeURIComponent(mensagem);
-link.target = "_blank";
-link.innerText = "Abrir WhatsApp";
-link.style.color = "#22c55e";
+/* SERVIÇOS */
+.servicos{
+padding:40px 20px;
+text-align:center;
+}
 
-chat.appendChild(link);
+.cards{
+display:flex;
+flex-wrap:wrap;
+gap:15px;
+justify-content:center;
+}
 
-input.value = "";
-chat.scrollTop = chat.scrollHeight;
+.card{
+background:#112240;
+padding:20px;
+border-radius:10px;
+width:250px;
+}
+
+/* SOBRE */
+.sobre{
+padding:40px 20px;
+text-align:center;
+}
+
+/* FOOTER */
+footer{
+text-align:center;
+padding:20px;
+background:#081423;
+}
+
+/* WHATSAPP FLOAT */
+.whatsapp-float{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25d366;
+color:#fff;
+padding:15px;
+border-radius:50%;
+font-size:20px;
+text-decoration:none;
+}
+
+/* CHAT */
+.chat-btn{
+position:fixed;
+bottom:90px;
+right:20px;
+background:#1db954;
+border:none;
+padding:15px;
+border-radius:50%;
+color:#fff;
+font-size:18px;
+}
+
+.chat-box{
+display:none;
+position:fixed;
+bottom:160px;
+right:20px;
+background:#fff;
+color:#000;
+padding:15px;
+border-radius:10px;
+width:200px;
 }
