@@ -47,38 +47,40 @@ mostrarCards();
 // =============================
 
 function abrirChat(){
-document.getElementById("chatBox").style.display = "flex";
+    document.getElementById("chatBox").style.display = "flex";
 }
 
 function fecharChat(){
-document.getElementById("chatBox").style.display = "none";
+    document.getElementById("chatBox").style.display = "none";
 }
-
-
 // =============================
 // ENVIAR MENSAGEM
 // =============================
 
-function enviarMensagem(event){
+function enviarMensagem(){
+    const input = document.getElementById("chatInput");
+    const mensagem = input.value;
+    
+    if(mensagem === "") return;
+    
+    const chat = document.getElementById("chatMessages");
+    
+    // mensagem do usuario
+    const msgUser = document.createElement("div");
+    msgUser.classList.add("msg","user");
+    msg.innerText = mensagem;
+    chat.appendChild(msgUser);
+    
+    // resposta automática
+    const msgBot = document.createElement("div");
+    msgBot.classList.add("msg", "bot");
 
-if(event.key === "Enter"){
+    msgBot.innerText = "Obrigado pelo contato! Em breve nossa equipe responderá. Clique abaixo para falar no WhatsApp.";
 
-const input = document.getElementById("chatInput");
-const mensagem = input.value;
+    chat.appendChild(msgBot);
 
-if(mensagem.trim() === "") return;
-
-const chat = document.getElementById("chatMessages");
-
-const userMsg = document.createElement("div");
-userMsg.className = "user-message";
-userMsg.innerText = mensagem;
-
-chat.appendChild(userMsg);
-
-input.value="";
-
-chat.scrollTop = chat.scrollHeight;
+    // botão WhatsApp
+    chat.scrollTop = chat.scrollHeight;
 
 setTimeout(()=>respostaBot(mensagem),1000);
 
