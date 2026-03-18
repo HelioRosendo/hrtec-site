@@ -1,7 +1,8 @@
-<meta name="description" content="Suporte técnico em informática, redes, servidores, CFTV e manutenção de computadores em Brasília. HR Tecnologia e Materiais Elétricos.">
+<?xml version="1.0" encoding="UTF-8"?>
 
-<meta name="keywords" content="suporte técnico, manutenção de computadores, redes, servidores, CFTV, TI Brasília">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-<meta name="author" content="HR Tecnologia e Materiais Elétricos">
-
-<meta name="robots" content="index, follow">
+<url>
+<loc>https://www.hrtec-eletrico.com.br</loc>
+<priority>1.0</priority>
+</url>
