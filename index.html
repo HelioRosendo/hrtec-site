@@ -21,6 +21,33 @@ https://wa.me/556199999999?text=Olá,%20preciso%20de%20suporte%20em%20TI
 <meta name="robots" content="index, follow">
 </head>
 
+<!-- BOTÃO CHAT -->
+<div class="chat-botao" onclick="abrirChat()">
+<i class="fas fa-comments"></i>
+</div>
+
+<!-- CAIXA DE CHAT -->
+<div class="chat-box" id="chatBox">
+
+<div class="chat-header">
+Suporte HRTEC
+<span onclick="fecharChat()">×</span>
+</div>
+
+<div class="chat-mensagens" id="chatMensagens">
+<div class="msg bot">
+Olá! 👋  
+Como podemos te ajudar hoje?
+</div>
+</div>
+
+<div class="chat-input">
+<input type="text" id="chatInput" placeholder="Digite sua mensagem...">
+<button onclick="enviarMensagem()">Enviar</button>
+</div>
+
+</div>
+
 <body>
 
 <a href="https://wa.me/5561999999999" target="_blank" class="whatsapp-float">
