@@ -65,7 +65,7 @@ chat.appendChild(user);
 
 const bot = document.createElement("div");
 bot.classList.add("msg","bot");
-bot.innerText = "Recebemos sua mensagem! Clique abaixo para falar no WhatsApp.";
+bot.innerText = "bot.innerText = "Olá! 👋\n\nSomos da HRTEC.\n\nInforme seu problema que vamos te ajudar rapidamente.";
 chat.appendChild(bot);
 
 const link = document.createElement("a");
