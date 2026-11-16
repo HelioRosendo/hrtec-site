@@ -1,93 +1,132 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>HRTEC - Suporte Técnico em TI</title>
-
-<link rel="stylesheet" href="style.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HRTEC - Diagnóstico e Suporte em TI & Elétrica</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-
 <body>
 
-<!-- MENU -->
-<header class="menu">
-    <h2>HRTEC</h2>
-    <nav>
-        <a href="#inicio">Início</a>
-        <a href="#servicos">Serviços</a>
-        <a href="#sobre">Sobre</a>
-        <a href="#contato">Contato</a>
-    </nav>
-</header>
+    <!-- Cabeçalho / Menu -->
+    <header class="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">HR<span class="logo-accent">TEC</span></a>
+            <nav class="menu">
+                <a href="#diagnostico">Diagnóstico Gratuito</a>
+                <a href="#servicos">Serviços</a>
+                <a href="#diferenciais">Diferenciais</a>
+                <a href="#contato">Contato</a>
+            </nav>
+        </div>
+    </header>
 
-<!-- HERO -->
-<section class="hero" id="inicio">
-    <h1>Suporte Técnico em Informática</h1>
-    <p>Redes • Servidores • Firewall • Manutenção</p>
+    <!-- Seção Principal (Hero - Estilo Raio-X / Landing Page) -->
+    <section id="diagnostico" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content-grid">
+            
+            <div class="hero-text">
+                <span class="badge">Avaliação Técnica Gratuita</span>
+                <h1>Sua empresa está perdendo dinheiro com falhas de TI e Elétrica?</h1>
+                <p>Solicite um <strong>Raio-X Técnico Gratuito</strong> da sua infraestrutura. Identificamos gargalos, riscos de segurança e falhas na rede da sua empresa.</p>
+                
+                <ul class="hero-list">
+                    <li><i class="fas fa-check-circle"></i> Análise de segurança e redes Wi-Fi / Cabeadas</li>
+                    <li><i class="fas fa-check-circle"></i> Diagnóstico de lentidão em servidores e PCs</li>
+                    <li><i class="fas fa-check-circle"></i> Verificação de infraestrutura elétrica e Nobreaks</li>
+                </ul>
 
-    <a href="https://wa.me/5561999999999" class="botao">
-        Falar no WhatsApp
-    </a>
-</section>
+                <a href="https://wa.me/5561985130670?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20o%20Raio-X%20Gratuito%20da%20minha%20TI" target="_blank" class="btn-whatsapp">
+                    <i class="fab fa-whatsapp"></i> Solicitar Raio-X via WhatsApp
+                </a>
+            </div>
 
-<!-- SERVIÇOS -->
-<section class="servicos" id="servicos">
-    <h2>Nossos Serviços</h2>
+            <!-- Card de Formulário Direto na Tela -->
+            <div class="lead-card">
+                <h3>Agendar Diagnóstico Gratuito</h3>
+                <p>Preencha os dados abaixo e nossa equipe entrará em contato:</p>
+                
+                <form class="lead-form" onsubmit="event.preventDefault(); alert('Solicitação enviada!');">
+                    <input type="text" placeholder="Seu Nome Completo" required>
+                    <input type="text" placeholder="Nome da Sua Empresa" required>
+                    <input type="tel" placeholder="WhatsApp / Telefone" required>
+                    <select required>
+                        <option value="">Qual o foco principal?</option>
+                        <option value="ti">Suporte em TI / Redes</option>
+                        <option value="eletrica">Infraestrutura Elétrica</option>
+                        <option value="ambos">Ambos (TI e Elétrica)</option>
+                    </select>
+                    <button type="submit" class="btn-submit">Quero Meu Raio-X Gratuito</button>
+                </form>
+            </div>
 
-    <div class="cards">
-        <div class="card">💻 Suporte Técnico</div>
-        <div class="card">🌐 Redes</div>
-        <div class="card">🔐 Segurança</div>
-        <div class="card">🖥 Servidores</div>
-    </div>
-</section>
+        </div>
+    </section>
 
-<!-- SOBRE -->
-<section class="sobre" id="sobre">
-    <h2>Sobre a HRTEC</h2>
-    <p>
-        Especialistas em tecnologia da informação, oferecendo soluções completas
-        para empresas e residências.
-    </p>
-</section>
+    <!-- Seção de Diagnóstico / Checklist de Problemas -->
+    <section class="problem-section">
+        <div class="container">
+            <h2 class="section-title">Sua empresa passa por algum destes problemas?</h2>
+            <div class="problems-grid">
+                <div class="problem-card">
+                    <i class="fas fa-wifi"></i>
+                    <h4>Internet instável ou caindo</h4>
+                    <p>Wi-Fi fraco, lentidão em reuniões e quedas frequentes de sistema.</p>
+                </div>
+                <div class="problem-card">
+                    <i class="fas fa-shield-virus"></i>
+                    <h4>Risco de perda de dados</h4>
+                    <p>Falta de backup automático e vulnerabilidade a vírus/ransomware.</p>
+                </div>
+                <div class="problem-card">
+                    <i class="fas fa-plug-circle-exclamation"></i>
+                    <h4>Sobrecarga ou Falhas Elétricas</h4>
+                    <p>Quedas de energia danificando equipamentos e Nobreaks inadequados.</p>
+                </div>
+                <div class="problem-card">
+                    <i class="fas fa-headset"></i>
+                    <h4>Falta de suporte técnico ágil</h4>
+                    <p>Demora no atendimento quando os computadores ou sistemas param.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- CONTATO -->
-<section class="contato" id="contato">
-    <h2>Contato</h2>
-    <p>Entre em contato conosco agora mesmo.</p>
+    <!-- Seção de Serviços / Soluções -->
+    <section id="servicos" class="services-section">
+        <div class="container">
+            <h2 class="section-title">Soluções Completas HRTEC</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-network-wired"></i>
+                    <h3>Redes & Cabeamento</h3>
+                    <p>Organização de Racks, crimpagem de pontos, configuração de switches, roteadores e Wi-Fi corporativo.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-server"></i>
+                    <h3>Servidores & Segurança</h3>
+                    <p>Implantação de Firewalls, servidores de arquivos, backups em nuvem e proteção de endpoints.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Manutenção TI & Elétrica</h3>
+                    <p>Suporte preventivo e corretivo para computadores, infraestrutura elétrica e montagem de painéis.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <a href="https://wa.me/5561999999999" class="botao">
-        WhatsApp
-    </a>
-</section>
+    <!-- Rodapé -->
+    <footer id="contato" class="footer">
+        <div class="container footer-content">
+            <p><strong>HRTEC Tecnologia e Materiais Elétricos</strong></p>
+            <p>Atendimento especializado para empresas e instituições públicas.</p>
+            <p>&copy; 2025 HRTEC - Todos os direitos reservados.</p>
+        </div>
+    </footer>
 
-<!-- WHATSAPP FLOAT -->
-<a href="https://wa.me/5561999999999" class="whatsapp-float">💬</a>
-
-<!-- CHAT -->
-<div class="chat-container">
-
-<button class="chat-btn" onclick="toggleChat()">💬</button>
-
-<div class="chat-box" id="chat">
-
-<div class="chat-header">
-Suporte HRTEC
-<span onclick="toggleChat()">✖</span>
-</div>
-
-<div class="chat-messages" id="chatMessages"></div>
-
-<div class="chat-options" id="chatOptions"></div>
-
-</div>
-</div>
-
-<script src="script.js"></script>
-
+    <script src="script.js"></script>
 </body>
 </html>
