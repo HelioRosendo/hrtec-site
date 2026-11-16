@@ -1,154 +1,320 @@
-body{
-margin:0;
-font-family:Arial;
-background:#0f172a;
-color:white;
+/* Estilos Globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
 }
 
-/* MENU */
-.menu{
-position:fixed;
-top:0;
-width:100%;
-display:flex;
-justify-content:space-between;
-padding:15px 30px;
-background:#020617;
-z-index:1000;
+body {
+    background-color: #0f172a;
+    color: #ffffff;
 }
 
-.menu a{
-color:white;
-margin:0 10px;
-text-decoration:none;
+/* Cabeçalho */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    padding: 15px 0;
+    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* HERO */
-.hero{
-height:80vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding-top:60px;
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-.botao{
-margin-top:20px;
-padding:12px 30px;
-background:#22c55e;
-border-radius:30px;
-color:white;
-text-decoration:none;
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-/* SERVIÇOS */
-.servicos{
-padding:60px 20px;
-text-align:center;
+.logo {
+    font-size: 26px;
+    font-weight: 800;
+    color: #ffffff;
+    text-decoration: none;
+    letter-spacing: 1px;
 }
 
-.cards{
-display:flex;
-gap:20px;
-justify-content:center;
-flex-wrap:wrap;
+.logo-accent {
+    color: #38bdf8;
 }
 
-.card{
-background:#1e293b;
-padding:20px;
-border-radius:10px;
-width:200px;
+.menu {
+    display: flex;
+    gap: 25px;
 }
 
-/* SOBRE */
-.sobre{
-padding:60px 20px;
-text-align:center;
-background:#020617;
+.menu a {
+    color: #cbd5e1;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    transition: color 0.3s;
 }
 
-/* CONTATO */
-.contato{
-padding:60px 20px;
-text-align:center;
+.menu a:hover {
+    color: #38bdf8;
 }
 
-/* WHATSAPP */
-.whatsapp-float{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#25d366;
-padding:15px;
-border-radius:50%;
-color:white;
-text-decoration:none;
+/* Hero Section (Landing Page de Conversão) */
+.hero {
+    position: relative;
+    padding-top: 140px;
+    padding-bottom: 80px;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: radial-gradient(circle at top right, #1e293b, #0f172a);
 }
 
-/* CHAT */
-.chat-container{
-position:fixed;
-bottom:20px;
-right:90px;
+.hero-content-grid {
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    gap: 50px;
+    align-items: center;
 }
 
-.chat-btn{
-width:60px;
-height:60px;
-background:#22c55e;
-border:none;
-border-radius:50%;
-color:white;
-font-size:24px;
-cursor:pointer;
+.badge {
+    background-color: rgba(56, 189, 248, 0.15);
+    color: #38bdf8;
+    border: 1px solid #38bdf8;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-bottom: 20px;
 }
 
-.chat-box{
-display:none;
-width:300px;
-height:400px;
-background:#020617;
-border-radius:10px;
-flex-direction:column;
-overflow:hidden;
-margin-bottom:10px;
+.hero-text h1 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 20px;
 }
 
-.chat-header{
-background:#22c55e;
-padding:10px;
-display:flex;
-justify-content:space-between;
+.hero-text p {
+    font-size: 1.15rem;
+    color: #94a3b8;
+    margin-bottom: 25px;
+    line-height: 1.6;
 }
 
-.chat-messages{
-flex:1;
-padding:10px;
-overflow-y:auto;
+.hero-list {
+    list-style: none;
+    margin-bottom: 30px;
 }
 
-.bot{
-background:#1e293b;
-padding:8px;
-margin-bottom:5px;
-border-radius:8px;
+.hero-list li {
+    font-size: 1rem;
+    color: #e2e8f0;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-.chat-options{
-padding:10px;
-display:flex;
-flex-direction:column;
-gap:5px;
+.hero-list i {
+    color: #38bdf8;
 }
 
-.chat-options button{
-background:#22c55e;
-border:none;
-padding:10px;
-border-radius:5px;
-color:white;
-cursor:pointer;
+/* Botão do WhatsApp */
+.btn-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #25d366;
+    color: #ffffff;
+    padding: 14px 28px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 1.05rem;
+    font-weight: 700;
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.btn-whatsapp:hover {
+    background-color: #20ba5a;
+    transform: translateY(-2px);
+}
+
+/* Card de Lead (Formulário) */
+.lead-card {
+    background-color: #1e293b;
+    padding: 35px 30px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.lead-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.lead-card p {
+    font-size: 0.9rem;
+    color: #94a3b8;
+    margin-bottom: 20px;
+}
+
+.lead-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.lead-form input, .lead-form select {
+    width: 100%;
+    padding: 12px 15px;
+    background-color: #0f172a;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 0.95rem;
+}
+
+.lead-form input:focus, .lead-form select:focus {
+    outline: none;
+    border-color: #38bdf8;
+}
+
+.btn-submit {
+    background-color: #38bdf8;
+    color: #0f172a;
+    border: none;
+    padding: 14px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-submit:hover {
+    background-color: #7dd3fc;
+}
+
+/* Seção de Problemas */
+.problem-section {
+    padding: 80px 0;
+    background-color: #0b0f19;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 50px;
+}
+
+.problems-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 25px;
+}
+
+.problem-card {
+    background-color: #1e293b;
+    padding: 30px 20px;
+    border-radius: 12px;
+    border-left: 4px solid #ef4444;
+}
+
+.problem-card i {
+    font-size: 2rem;
+    color: #ef4444;
+    margin-bottom: 15px;
+}
+
+.problem-card h4 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.problem-card p {
+    font-size: 0.9rem;
+    color: #94a3b8;
+    line-height: 1.5;
+}
+
+/* Seção de Serviços */
+.services-section {
+    padding: 80px 0;
+    background-color: #0f172a;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.service-card {
+    background-color: #1e293b;
+    padding: 40px 30px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: transform 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+.service-card i {
+    font-size: 2.5rem;
+    color: #38bdf8;
+    margin-bottom: 20px;
+}
+
+.service-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+}
+
+.service-card p {
+    color: #94a3b8;
+    line-height: 1.6;
+}
+
+/* Rodapé */
+.footer {
+    background-color: #0b0f19;
+    padding: 40px 0;
+    text-align: center;
+    color: #64748b;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Responsivo para Celular */
+@media (max-width: 900px) {
+    .hero-content-grid {
+        grid-template-columns: 1fr;
+    }
+    .hero-text h1 {
+        font-size: 2.1rem;
+    }
+    .menu {
+        display: none;
+    }
 }
